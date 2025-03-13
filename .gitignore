@@ -1,0 +1,4 @@
+# Ignore SWI-Prolog temporary files
+*.qlf
+*.tmp
+.DS_Store
