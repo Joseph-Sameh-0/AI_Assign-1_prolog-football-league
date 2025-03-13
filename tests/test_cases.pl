@@ -1,4 +1,5 @@
 :- consult('../src/assignment1.pl').
+:- dynamic most_common_position_in_team/2, top_scorer/1, num_matches_of_team/2, matches_of_team/2, most_successful_team/1, team_count_by_country/2, players_in_team/2.
 
 run_tests :-
     % test_players_in_team,
