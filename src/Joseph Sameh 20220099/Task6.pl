@@ -5,4 +5,5 @@
 % @author Joseph Sameh
 top_scorer(Player) :-
   goals(Player, G),
-  not((goals(_, G2), G2 > G)).
+  not((goals(_, G2), G2 > G)),
+  !.
