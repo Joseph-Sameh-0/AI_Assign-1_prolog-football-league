@@ -2,6 +2,7 @@
 :- consult('../helperFunctions.pl').
 
 % TASK 2: Count how many teams are from a specific country.
+% @author Youssef Joseph
 team_count_by_country(Country, Count) :-
     find_teams(Country, [], Teams),
     my_length(Teams, Count).
