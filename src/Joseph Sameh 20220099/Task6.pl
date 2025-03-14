@@ -6,4 +6,4 @@
 top_scorer(Player) :-
   goals(Player, G),
   not((goals(_, G2), G2 > G)),
-  !.
+  !. % Don't check other branches if success, to solve unneeded backtracking.
