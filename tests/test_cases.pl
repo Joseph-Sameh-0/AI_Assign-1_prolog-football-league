@@ -3,8 +3,8 @@
 
 run_tests :-
     % test_players_in_team,
-    % test_team_count_by_country,
-    % test_most_successful_team,
+    test_team_count_by_country,
+    test_most_successful_team,
     test_matches_of_team,
     test_num_matches_of_team,
     test_top_scorer,

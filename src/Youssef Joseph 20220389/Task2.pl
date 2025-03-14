@@ -1,5 +1,6 @@
 :- consult('../../data/league_data.pl').
 :- consult('../helperFunctions.pl').
+:- dynamic team/3, my_length/2.
 
 % TASK 2: Count how many teams are from a specific country.
 % @author Youssef Joseph
