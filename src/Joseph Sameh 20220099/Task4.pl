@@ -9,7 +9,7 @@ matches_of_team(Team, Matches) :-
 find_matches(Team, Acc, Matches) :-
   match(T1, T2, G1, G2),
   (T1 = Team ; T2 = Team),
-  \+ member((T1, T2, G1, G2), Acc), % the match not in Acc
+  not(member((T1, T2, G1, G2), Acc)), % the match not in Acc
   !, % Don't check other branches if success.
   find_matches(Team, [(T1, T2, G1, G2) | Acc], Matches).
 
