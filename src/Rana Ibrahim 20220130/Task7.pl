@@ -67,3 +67,30 @@ most_common_position_in_team(N1,N2,N3,N4,Common):-
     (   N2 >= N1, N2 >= N3, N2 >= N4 , Common = midfielder, !);
     (   N3 >= N1, N3 >= N2, N3 >= N4 , Common = goalkeeper, ! );
     Common = defender.
+
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ANOTHER ANSWER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    
+%interface%  
+team_position(Team,Result):-
+    team_position(Team,[],[],Result).
+%recursive case%
+team_position(Team,Acc,Total,Result):- 
+    player(X, Team, Y),
+    \+ is_member(X,Acc),
+    !,
+    team_position(Team, [X|Acc],[Y|Total], Result).
+%base case%
+team_position(_,_,Acc,Acc).
+
+last_el([X],X):- !.
+    
+last_el([_|T],X):-
+    last_el(T,X).
+    
+    
+%interface%
+most_common_position_in_team(Team,Common):-
+    team_position(Team,Result),
+    last_el(Result,Common).
