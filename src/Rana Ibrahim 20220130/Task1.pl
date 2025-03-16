@@ -16,12 +16,14 @@ my_append([X|T],L2,[X|Result]):-
 %interface%
 players_in_team(Team, L):-
     players_in_team(Team,[], L).
-%base case%
-players_in_team(_, List, List).
-  
+
 %recursive case%
 players_in_team(Team, List, Result):-
     player(X, Team, _),
     \+ is_member(X,List),
     my_append([X],List,NewList),
+    !,
     players_in_team(Team, NewList, Result).
+
+%base case%
+players_in_team(_, List, List).
