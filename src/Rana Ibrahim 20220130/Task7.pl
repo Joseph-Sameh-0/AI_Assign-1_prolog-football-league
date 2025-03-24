@@ -1,5 +1,6 @@
 :- consult('../../data/league_data.pl').
 :- consult('../helperFunctions.pl').
+:- dynamic my_length/2, player/3, my_member/2.
 
 % TASK 7: Find the most common position in a specific team.
 % @author Rana Ibrahim Bassiouny
@@ -34,3 +35,4 @@ most_common_position_in_team(N1,N2,N3,N4,Common):-
     (   N2 >= N1, N2 >= N3, N2 >= N4 , Common = midfielder, !);
     (   N3 >= N1, N3 >= N2, N3 >= N4 , Common = goalkeeper, ! );
     Common = defender.
+
